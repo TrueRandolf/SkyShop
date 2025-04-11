@@ -1,7 +1,5 @@
 package org.skypro.skyshop.model.product;
 
-import org.springframework.objenesis.instantiator.util.UnsafeUtils;
-
 import java.util.UUID;
 
 public class FixPriceProduct extends Product {

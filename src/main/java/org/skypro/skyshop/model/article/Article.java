@@ -12,10 +12,10 @@ public class Article implements Searchable {
     private final String articleText;
     private final UUID id;
 
-    public Article(String articleTitle, String articleText) {
+    public Article(UUID id, String articleTitle, String articleText) {
         this.articleTitle = articleTitle;
         this.articleText = articleText;
-        this.id = UUID.randomUUID();
+        this.id = id;
     }
 
     @Override

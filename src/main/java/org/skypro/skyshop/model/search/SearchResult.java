@@ -1,21 +1,15 @@
 package org.skypro.skyshop.model.search;
 
-
-import org.springframework.stereotype.Service;
-
-//@Service
 public class SearchResult {
-    final String id;
-    final String name;
-    final String contentType;
+    private final String id;
+    private final String name;
+    private final String contentType;
 
-    public SearchResult(Searchable s) {
-
-        this.id = s.getId().toString();
-        this.name = s.getName();
-        this.contentType = s.getContentType();
+    private SearchResult(String id, String name, String contentType) {
+        this.id = id;
+        this.name = name;
+        this.contentType = contentType;
     }
-
 
     public String getId() {
         return id;
@@ -29,9 +23,8 @@ public class SearchResult {
         return contentType;
     }
 
-
     public static SearchResult fromSearchable(Searchable searchable) {
-        return new SearchResult(searchable);
+        return new SearchResult(searchable.getId().toString(), searchable.getName(), searchable.getContentType());
     }
 
 }
