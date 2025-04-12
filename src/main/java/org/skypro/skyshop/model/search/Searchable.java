@@ -13,7 +13,7 @@ public interface Searchable {
     UUID getId();
 
     default String getStringRepresentation() {
-        return "имя \"" + "\" тип \"" + getContentType() + "\"";
+        return "имя \"" + getName() + "\" тип \"" + getContentType() + "\"";
     }
 
 }

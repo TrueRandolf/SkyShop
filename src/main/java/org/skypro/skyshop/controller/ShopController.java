@@ -15,11 +15,11 @@ import java.util.*;
 @RestController
 public class ShopController {
     private final StorageService storageService = new StorageService();
+    private final SearchService searchService = new SearchService(storageService);
 
 
     @GetMapping("/products")
     public Collection<Product> getAllProducts() {
-
         return storageService.getProducts();
     }
 
@@ -30,7 +30,7 @@ public class ShopController {
 
     @GetMapping("/search")
     public List<SearchResult> searchpattern(@RequestParam("pattern") String pattern) {
-        return new SearchService(storageService).search(pattern);
+        return searchService.search(pattern);
     }
 
 }

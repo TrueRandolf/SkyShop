@@ -28,8 +28,8 @@ public class StorageService {
         return articleMap.values();
     }
 
-    public LinkedList<Searchable> getSearchables() {
-        LinkedList<Searchable> searchables = new LinkedList<>();
+    public List<Searchable> getSearchables() {
+        List<Searchable> searchables = new LinkedList<>();
         searchables.addAll(productMap.values());
         searchables.addAll(articleMap.values());
         return searchables;
