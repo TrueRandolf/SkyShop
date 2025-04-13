@@ -16,7 +16,6 @@ public abstract class Product implements Searchable {
         }
         this.name = name;
         this.id = id;
-        //this.id = UUID.randomUUID();
     }
 
     public String getName() {

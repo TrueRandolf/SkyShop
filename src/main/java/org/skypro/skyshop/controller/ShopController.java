@@ -14,9 +14,13 @@ import java.util.*;
 
 @RestController
 public class ShopController {
-    private final StorageService storageService = new StorageService();
-    private final SearchService searchService = new SearchService(storageService);
+    private final StorageService storageService;
+    private final SearchService searchService;
 
+    public ShopController(StorageService storageService, SearchService searchService) {
+        this.storageService = storageService;
+        this.searchService = searchService;
+    }
 
     @GetMapping("/products")
     public Collection<Product> getAllProducts() {
