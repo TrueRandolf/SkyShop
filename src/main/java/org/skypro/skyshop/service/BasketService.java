@@ -4,7 +4,7 @@ import org.skypro.skyshop.model.basket.ProductBasket;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-        import java.util.stream.Collectors;
+import java.util.stream.Collectors;
 
 @Service
 public class BasketService {
@@ -29,12 +29,9 @@ public class BasketService {
                 basketProduct.getProductBasket().entrySet().stream()
                         .map(i -> new BasketItem(serviceStorage.getProductById(i.getKey()).orElseThrow(),
                                 i.getValue()))
-                        // .toList());   - ВОТ ЭТА ХУИТА ВСЕ РАВНО РАБОТАЕТ , но как???
                         .collect(Collectors.toList()));
 
     }
-
-
 }
 
 

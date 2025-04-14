@@ -7,8 +7,8 @@ import java.util.List;
 @Component
 
 public final class UserBasket {
-    private List<BasketItem> basketItems;
-    private Long total;
+    private final List<BasketItem> basketItems;
+    private final Long total;
 
     public UserBasket(List<BasketItem> basketItems) {
         this.basketItems = basketItems;
