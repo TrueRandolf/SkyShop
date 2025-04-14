@@ -5,7 +5,6 @@ import java.util.UUID;
 public class DiscountProduct extends Product {
     private final int basePrice;
     private final int discountPercent;
-    private final int discountPrice;
 
     public DiscountProduct(UUID id, String name, int basePrice, int discountPercent) {
         super(id, name);
@@ -17,17 +16,16 @@ public class DiscountProduct extends Product {
         }
         this.basePrice = basePrice;
         this.discountPercent = discountPercent;
-        this.discountPrice = basePrice - basePrice * discountPercent / 100;
     }
 
     @Override
     public int getPrice() {
-        return discountPrice;
+        return basePrice - basePrice * discountPercent / 100;
     }
 
     @Override
     public String toString() {
-        return "<" + name + ">:<" + discountPrice + ">(<" + discountPercent + ">%)";
+        return "<" + name + ">:<" + (basePrice - basePrice * discountPercent / 100) + ">(<" + discountPercent + ">%)";
     }
 
     @Override
