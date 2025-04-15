@@ -1,5 +1,6 @@
 package org.skypro.skyshop.service;
 
+import org.skypro.skyshop.exceptions.NoSuchProductException;
 import org.skypro.skyshop.model.basket.ProductBasket;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,7 @@ public class BasketService {
 
     public void setProductInBasket(UUID id) {
         if (!serviceStorage.getProductById(id).isPresent()) {
-            throw new IllegalArgumentException("Класс BasketSevice: Несуществующий ID");
+            throw new NoSuchProductException("");
         }
         basketProduct.addProductToBasket(id);
     }

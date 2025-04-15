@@ -13,11 +13,7 @@ public class ProductBasket {
     private final Map<UUID, Integer> productBasket = new HashMap<>();
 
     public void addProductToBasket(UUID id) {
-        int quantity = 0;
-        if(productBasket.containsKey(id)) {
-            quantity = productBasket.get(id);
-        }
-        productBasket.put(id, ++quantity);
+        productBasket.merge(id,1,Integer::sum);
     }
 
     public Map<UUID, Integer> getProductBasket() {
