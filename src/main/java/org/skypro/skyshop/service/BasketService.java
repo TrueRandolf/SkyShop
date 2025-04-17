@@ -19,7 +19,7 @@ public class BasketService {
 
     public void setProductInBasket(UUID id) {
         if (!serviceStorage.getProductById(id).isPresent()) {
-            throw new NoSuchProductException("");
+            throw new NoSuchProductException(id.toString());
         }
         basketProduct.addProductToBasket(id);
     }
